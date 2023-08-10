@@ -5,13 +5,14 @@ import tkinter.messagebox as messagebox
 
 def generate_password():
     length = 16
-    characters = string.ascii_letters + string.digits
+    characters = string.ascii_letters + string.digits + string.punctuation  # Include symbols
     password = ''.join(secrets.choice(characters) for _ in range(length))
     
     password_entry.config(state="normal")
     password_entry.delete(0, tk.END)
     password_entry.insert(0, password)
     password_entry.config(state="readonly")
+
 
 # Function to copy the password to clipboard
 def copy_password():
@@ -70,3 +71,4 @@ exit_button.pack(pady=(10, 20))
 
 # Start the main event loop
 app.mainloop()
+#37 billion years
